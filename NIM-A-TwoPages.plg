@@ -1,0 +1,20 @@
+<html>
+<body>
+<pre>
+<h1>µVision2 Build Log</h1>
+<h2>Project:</h2>
+C:\Users\Chris\Documents\GitHub\NIM-A-two-page-display\NIM-A-TwoPages.uv2
+Project File Date:  04/11/2016
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling 8253count.c...
+8253COUNT.C(898): error C141: syntax error near 'else'
+8253COUNT.C(921): error C215: illegal type conversion
+8253COUNT.C(922): error C215: illegal type conversion
+8253COUNT.C(923): error C215: illegal type conversion
+8253COUNT.C(938): error C215: illegal type conversion
+8253COUNT.C(939): error C215: illegal type conversion
+8253COUNT.C(940): error C215: illegal type conversion
+8253COUNT.C(1095): error C141: syntax error near 'void'
+Target not created

@@ -1,0 +1,335 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AC	STC12C5A60S2.h	/^sbit AC  = PSW^6;$/;"	v
+ACC	STC12C5A60S2.h	/^sfr ACC  = 0xE0; \/\/Accumulator                                                              0000,0000$/;"	v
+ADC_CONTR	STC12C5A60S2.h	/^sfr ADC_CONTR = 0xBC; \/\/A\/D 转换控制寄存器 ADC_POWER SPEED1 SPEED0 ADC_FLAG ADC_START CHS2 CHS1 CHS0 0000,0000$/;"	v
+ADC_RES	STC12C5A60S2.h	/^sfr ADC_RES  = 0xBD;  \/\/A\/D 转换结果高8位 ADCV.9 ADCV.8 ADCV.7 ADCV.6 ADCV.5 ADCV.4 ADCV.3 ADCV.2	 0000,0000$/;"	v
+ADC_RESL	STC12C5A60S2.h	/^sfr ADC_RESL = 0xBE;  \/\/A\/D 转换结果低2位                                           ADCV.1 ADCV.0	 0000,0000$/;"	v
+AUXR	STC12C5A60S2.h	/^sfr AUXR  = 0x8E; \/\/Auxiliary Register  T0x12 T1x12 UART_M0x6 BRTR S2SMOD BRTx12 EXTRAM S1BRS  0000,0000$/;"	v
+AUXR1	STC12C5A60S2.h	/^sfr AUXR1 = 0xA2; \/\/Auxiliary Register 1  -  PCA_P4  SPI_P4  S2_P4  GF2    ADRJ   -    DPS  0000,0000$/;"	v
+Ack0	config.h	/^sbit Ack0=P3^5;             \/\/并口主机接收完数据应答信号标志$/;"	v
+Ack1	config.h	/^sbit Ack1=P4^6;             \/\/并口主机接收完数据应答信号标志$/;"	v
+B	STC12C5A60S2.h	/^sfr B    = 0xF0; \/\/B Register                                                               0000,0000$/;"	v
+BRT	STC12C5A60S2.h	/^sfr BRT = 0x9C; \/\/S2 Baud-Rate Timer                                                    0000,0000$/;"	v
+BUS_SPEED	STC12C5A60S2.h	/^sfr BUS_SPEED = 0xA1; \/\/Stretch register      -     -    ALES1   ALES0   -   RWS2  RWS1  RWS0 xx10,x011$/;"	v
+C825310D	8253count.c	/^#define  C825310D /;"	d	file:
+C825311D	8253count.c	/^#define  C825311D /;"	d	file:
+C825312D	8253count.c	/^#define  C825312D /;"	d	file:
+C82531C	8253count.c	/^#define  C82531C /;"	d	file:
+C825320D	8253count.c	/^#define  C825320D /;"	d	file:
+C825321D	8253count.c	/^#define  C825321D /;"	d	file:
+C825322D	8253count.c	/^#define  C825322D /;"	d	file:
+C82532C	8253count.c	/^#define  C82532C /;"	d	file:
+C825330D	8253count.c	/^#define  C825330D /;"	d	file:
+C825331D	8253count.c	/^#define  C825331D /;"	d	file:
+C825332D	8253count.c	/^#define  C825332D /;"	d	file:
+C82533C	8253count.c	/^#define  C82533C /;"	d	file:
+C825340D	8253count.c	/^#define  C825340D /;"	d	file:
+C825341D	8253count.c	/^#define  C825341D /;"	d	file:
+C825342D	8253count.c	/^#define  C825342D /;"	d	file:
+C82534C	8253count.c	/^#define  C82534C /;"	d	file:
+C825350D	8253count.c	/^#define  C825350D /;"	d	file:
+C825351D	8253count.c	/^#define  C825351D /;"	d	file:
+C825352D	8253count.c	/^#define  C825352D /;"	d	file:
+C82535C	8253count.c	/^#define  C82535C /;"	d	file:
+CCAP0H	STC12C5A60S2.h	/^sfr CCAP0H = 0xFA; \/\/PCA 模块 0 的捕捉\/比较寄存器高 8 位。                                    0000,0000$/;"	v
+CCAP0L	STC12C5A60S2.h	/^sfr CCAP0L = 0xEA; \/\/PCA 模块 0 的捕捉\/比较寄存器低 8 位。                                    0000,0000$/;"	v
+CCAP1H	STC12C5A60S2.h	/^sfr CCAP1H = 0xFB; \/\/PCA 模块 1 的捕捉\/比较寄存器高 8 位。                                    0000,0000$/;"	v
+CCAP1L	STC12C5A60S2.h	/^sfr CCAP1L = 0xEB; \/\/PCA 模块 1 的捕捉\/比较寄存器低 8 位。                                    0000,0000$/;"	v
+CCAPM0	STC12C5A60S2.h	/^sfr CCAPM0 = 0xDA; \/\/PCA 模块0 PWM 寄存器  -   ECOM0  CAPP0  CAPN0  MAT0  TOG0  PWM0  ECCF0   x000,0000$/;"	v
+CCAPM1	STC12C5A60S2.h	/^sfr CCAPM1 = 0xDB; \/\/PCA 模块1 PWM 寄存器  -   ECOM1  CAPP1  CAPN1  MAT1  TOG1  PWM1  ECCF1   x000,0000$/;"	v
+CCF0	STC12C5A60S2.h	/^sbit CCF0   = CCON^0; \/\/PCA 模块0 中断标志, 由硬件置位, 必须由软件清0。$/;"	v
+CCF1	STC12C5A60S2.h	/^sbit CCF1   = CCON^1; \/\/PCA 模块1 中断标志, 由硬件置位, 必须由软件清0。$/;"	v
+CCON	STC12C5A60S2.h	/^sfr CCON   = 0xD8;   \/\/PCA 控制寄存器。    CF    CR    -     -     -     -    CCF1  CCF0   00xx,xx00$/;"	v
+CF	STC12C5A60S2.h	/^sbit CF     = CCON^7; \/\/PCA计数器溢出标志,由硬件或软件置位,必须由软件清0。$/;"	v
+CH	STC12C5A60S2.h	/^sfr CH     = 0xF9; \/\/PCA 计数器高位                                                        0000,0000$/;"	v
+CKMasterCmd	collateral.c	/^uchar CKMasterCmd()$/;"	f
+CL	STC12C5A60S2.h	/^sfr CL     = 0xE9; \/\/PCA 计数器低位                                                        0000,0000$/;"	v
+CLK_DIV	STC12C5A60S2.h	/^sfr CLK_DIV = 0x97; \/\/Clock Divder          -     -      -       -     -  CLKS2 CLKS1 CLKS0 xxxx,x000$/;"	v
+CMOD	STC12C5A60S2.h	/^sfr CMOD  = 0xD9; \/\/PCA 工作模式寄存器。   CIDL   -     -     -   CPS2   CPS1  CPS0  ECF   0xxx,x000$/;"	v
+CR	STC12C5A60S2.h	/^sbit CR     = CCON^6; \/\/1:允许 PCA 计数器计数, 必须由软件清0。$/;"	v
+CY	STC12C5A60S2.h	/^sbit CY  = PSW^7;$/;"	v
+Clear	lcd.c	/^void Clear()$/;"	f
+Close	lcd.c	/^void Close (uint idata x,uint idata y)$/;"	f
+CmOverTime	time0.c	/^uint CmOverTime;                           \/\/主从机通信握手定时中断次数$/;"	v
+CntColTimer	collateral.c	/^uint  CntColTimer;								\/\/默认0$/;"	v
+CntFlhWarnT0	time0.c	/^uint CntFlhWarnT0;                         \/\/主机采集数据时灯闪烁定时中断次数$/;"	v
+CntS1Warn	time0.c	/^uint CntS1Warn;                            \/\/备用显示屏上灯闪烁定时中断次数$/;"	v
+CntWarn	time0.c	/^uint CntWarn;                              \/\/LED灯闪烁定时中断次数$/;"	v
+Collect_Word	collateral.c	/^void Collect_Word(uchar *pub,uint nbyte)     \/\/主机采集数据              $/;"	f
+DDoseRata	8253count.c	/^float  DDoseRata[8];					\/\/电离室的计算剂量率(2015年10月20日加)$/;"	v
+DFlag_dw	8253count.c	/^uchar  DFlag_dw[8];						\/\/电离室单位标识$/;"	v
+DMean_Value	8253count.c	/^float  DMean_Value[8];				\/\/电离室平均值$/;"	v
+DPH	STC12C5A60S2.h	/^sfr DPH  = 0x83; \/\/Data Pointer High Byte                                                   0000,0000$/;"	v
+DPL	STC12C5A60S2.h	/^sfr DPL  = 0x82; \/\/Data Pointer Low Byte                                                    0000,0000$/;"	v
+DS_ReadData	at24c16.c	/^void DS_ReadData(uchar *dt)$/;"	f
+DS_SaveData	at24c16.c	/^void DS_SaveData(uchar *dt)$/;"	f
+DataCent	8253count.c	/^uchar  DataCent[75];                 \/\/探测器标定参数的百分位$/;"	v
+DataGe	8253count.c	/^uchar  DataGe[75];                   \/\/探测器标定参数的个位，初始时个十百千均为0$/;"	v
+DataTenth	8253count.c	/^uchar  DataTenth[75];                \/\/探测器标定参数的十分位$/;"	v
+DataThouth	8253count.c	/^uchar  DataThouth[75];               \/\/探测器标定参数的千分位$/;"	v
+Ddata	8253count.c	/^uint  idata Ddata[8];                   \/\/探头计数率(2015年10月20日让Ddata为电离室的计数值)$/;"	v
+DoseRata	8253count.c	/^float  DoseRata[8];						\/\/当前探头用来判断的剂量值$/;"	v
+Dsave0	8253count.c	/^float  idata Dsave0[8],Dsave1[8],Dsave2[8];\/\/电离室$/;"	v
+Dsave1	8253count.c	/^float  idata Dsave0[8],Dsave1[8],Dsave2[8];\/\/电离室$/;"	v
+Dsave2	8253count.c	/^float  idata Dsave0[8],Dsave1[8],Dsave2[8];\/\/电离室$/;"	v
+EA	STC12C5A60S2.h	/^sbit EA       = IE^7;$/;"	v
+EADC	STC12C5A60S2.h	/^sbit EADC     = IE^5; \/\/ADC 中断允许位$/;"	v
+ELVD	STC12C5A60S2.h	/^sbit ELVD     = IE^6; \/\/低压监测中断允许位$/;"	v
+ES	STC12C5A60S2.h	/^sbit ES       = IE^4;$/;"	v
+ET0	STC12C5A60S2.h	/^sbit ET0      = IE^1;$/;"	v
+ET1	STC12C5A60S2.h	/^sbit ET1      = IE^3;$/;"	v
+EX0	STC12C5A60S2.h	/^sbit EX0      = IE^0;$/;"	v
+EX1	STC12C5A60S2.h	/^sbit EX1      = IE^2;$/;"	v
+F0	STC12C5A60S2.h	/^sbit F0  = PSW^5;$/;"	v
+FALSE	collateral.c	/^#define FALSE /;"	d	file:
+Flag8253Cnting	main.c	/^bdata bit Flag8253Cnting;                        \/\/8253计数定时开始标志，默认0,在按下测量按键后置1$/;"	v
+FlagCollErr	collateral.c	/^bit	FlagCollErr;								\/\/默认0$/;"	v
+FlagCollFall	time0.c	/^bit FlagCollFall;                          \/\/主从通信失败标志，0$/;"	v
+FlagColling	collateral.c	/^bit FlagColling ;								\/\/默认0$/;"	v
+FlagMasColSlavOK	main.c	/^bdata bit FlagMasColSlavOK;                      \/\/主机采集数据时灯闪烁定时标志，默认0$/;"	v
+Flag_Change	setpara.c	/^uchar data Flag_Change=0;$/;"	v
+Flag_Collateral	main.c	/^bdata bit Flag_Collateral;                       \/\/从机接收指令超时标志$/;"	v
+Flag_InputChange	main.c	/^bdata bit Flag_InputChange;                      \/\/探头设置改变，默认0$/;"	v
+Flag_KeyInput	main.c	/^bdata bit Flag_KeyInput;                         \/\/探头按键标志，默认0$/;"	v
+Flag_KeyLeft	main.c	/^bdata bit Flag_KeyLeft;                          \/\/左移标志，0                                                        $/;"	v
+Flag_KeyOK	main.c	/^bdata bit Flag_KeyOK;                            \/\/测量标志，默认0$/;"	v
+Flag_KeyPara	main.c	/^bdata bit Flag_KeyPara;                          \/\/输入参数标志，0$/;"	v
+Flag_KeyReset	main.c	/^bdata bit Flag_KeyReset;                         \/\/重新显示标志，0$/;"	v
+Flag_KeyRight	main.c	/^bdata bit Flag_KeyRight;                         \/\/右移标志，默认0$/;"	v
+Flag_KeyTime	main.c	/^bdata bit Flag_KeyTime;                          \/\/测量时间标志，0$/;"	v
+Flag_Left	setpara.c	/^uchar data Flag_Left=0;                       \/\/参数a列的标志$/;"	v
+Flag_Mast	main.c	/^bdata bit Flag_Mast;                             \/\/主从机标志$/;"	v
+Flag_Meant	main.c	/^bdata bit Flag_Meant;							\/\/剂量平均值标识$/;"	v
+Flag_Para	setpara.c	/^uchar idata Flag_Para=0; $/;"	v
+Flag_ParaChange	main.c	/^bdata bit Flag_ParaChange;                       \/\/参数设置改变，默认0$/;"	v
+Flag_RefrInput	main.c	/^bdata bit Flag_RefrInput;                        \/\/探头个数按键再次按下标志$/;"	v
+Flag_RefrLeft	main.c	/^bdata bit Flag_RefrLeft;                         \/\/左移按键再次按下标志$/;"	v
+Flag_RefrPara	main.c	/^bdata bit Flag_RefrPara;                         \/\/输入参数按键再次按下标志$/;"	v
+Flag_RefrRight	main.c	/^bdata bit Flag_RefrRight;                        \/\/右移按键再次按下标志$/;"	v
+Flag_RefrTime	main.c	/^bdata bit Flag_RefrTime;                         \/\/测量时间按键再次按下标志$/;"	v
+Flag_Right	setpara.c	/^uchar data Flag_Right=0;                      \/\/参数b列的标志$/;"	v
+Flag_Tim0	time0.c	/^bit Flag_Tim0;                             \/\/定时器0结束标志，默认0；$/;"	v
+Flag_Warn	main.c	/^bdata bit Flag_Warn;                             \/\/报警标志$/;"	v
+Flag_Warn_Count	8253count.c	/^bit Flag_Warn_Count;				\/\/默认0；$/;"	v
+Flag_Warn_Flash	main.c	/^bdata bit Flag_Warn_Flash;                       \/\/LED灯闪烁标志$/;"	v
+Flag_Warn_Led	main.c	/^bdata bit Flag_Warn_Led;                         \/\/屏幕上报警灯闪烁标志，默认0$/;"	v
+Flag_Warn_Serial1	time0.c	/^bit Flag_Warn_Serial1;                     \/\/备用显示灯定时结束标识$/;"	v
+Flag_Yu	setpara.c	/^uchar idata Flag_Yu=0; $/;"	v
+Flag_need_Flash	8253count.c	/^uchar Flag_need_Flash[8];			\/\/LED闪烁标志$/;"	v
+Flag_need_warn	Masterdisplay.c	/^uchar Flag_need_warn[7];                   \/\/需要报警标志，初始0$/;"	v
+GATE	config.h	/^sbit GATE= P1^1;            \/\/8253门控信号$/;"	v
+GDoseRata	8253count.c	/^float  GDoseRata[8];                  \/\/每组探头测得的剂量率,GM计数管的剂量率(2015年10月20日改)$/;"	v
+GFlag_dw	8253count.c	/^uchar  GFlag_dw[8];                      \/\/GM计数管单位标志$/;"	v
+GMean_Value	8253count.c	/^float  GMean_Value[8];				\/\/平均值GM计数管平均值$/;"	v
+GetAndDisdata	8253count.c	/^void GetAndDisdata()                               \/\/刷新显示子程序$/;"	f
+Gsave0	8253count.c	/^float  idata Gsave0[8],Gsave1[8],Gsave2[8];\/\/计数管前5次DoseRata数据不要，save0,1,2用来记录前面3次的DoseRata(只平均三次的值)，来平滑计算平均值!$/;"	v
+Gsave1	8253count.c	/^float  idata Gsave0[8],Gsave1[8],Gsave2[8];\/\/计数管前5次DoseRata数据不要，save0,1,2用来记录前面3次的DoseRata(只平均三次的值)，来平滑计算平均值!$/;"	v
+Gsave2	8253count.c	/^float  idata Gsave0[8],Gsave1[8],Gsave2[8];\/\/计数管前5次DoseRata数据不要，save0,1,2用来记录前面3次的DoseRata(只平均三次的值)，来平滑计算平均值!$/;"	v
+IAP_ADDRH	STC12C5A60S2.h	/^sfr IAP_ADDRH   = 0xC3;$/;"	v
+IAP_ADDRL	STC12C5A60S2.h	/^sfr IAP_ADDRL   = 0xC4;$/;"	v
+IAP_CMD	STC12C5A60S2.h	/^sfr IAP_CMD     = 0xC5; \/\/IAP Mode Table          0    -    -      -    -    -   MS1   MS0   0xxx,xx00$/;"	v
+IAP_CONTR	STC12C5A60S2.h	/^sfr IAP_CONTR   = 0xC7; \/\/IAP Control Register  IAPEN SWBS SWRST CFAIL  -   WT2  WT1   WT0   0000,x000$/;"	v
+IAP_DATA	STC12C5A60S2.h	/^sfr IAP_DATA    = 0xC2;$/;"	v
+IAP_TRIG	STC12C5A60S2.h	/^sfr IAP_TRIG    = 0xC6;$/;"	v
+IE	STC12C5A60S2.h	/^sfr IE      = 0xA8;  \/\/中断控制寄存器        EA  ELVD  EADC   ES   ET1  EX1  ET0  EX0  0x00,0000$/;"	v
+IE0	STC12C5A60S2.h	/^sbit IE0 = TCON^1;$/;"	v
+IE1	STC12C5A60S2.h	/^sbit IE1 = TCON^3;$/;"	v
+IE2	STC12C5A60S2.h	/^sfr IE2       = 0xAF;  \/\/Auxiliary Interrupt   -     -     -    -     -    -  ESPI  ES2  0000,0000B$/;"	v
+IP	STC12C5A60S2.h	/^sfr IP      = 0xB8; \/\/中断优先级低位      PPCA  PLVD  PADC  PS   PT1  PX1  PT0  PX0   0000,0000$/;"	v
+IP2	STC12C5A60S2.h	/^sfr IP2   = 0xB5; \/\/                       -      -      -     -     -     -   PSPI   PS2   xxxx,xx00$/;"	v
+IPH	STC12C5A60S2.h	/^sfr IPH   = 0xB7; \/\/中断优先级高位       PPCAH  PLVDH  PADCH  PSH  PT1H  PX1H  PT0H  PX0H   0000,0000$/;"	v
+IPH2	STC12C5A60S2.h	/^sfr IPH2  = 0xB6; \/\/                       -      -      -     -     -     -   PSPIH  PS2H  xxxx,xx00$/;"	v
+IT0	STC12C5A60S2.h	/^sbit IT0 = TCON^0;$/;"	v
+IT1	STC12C5A60S2.h	/^sbit IT1 = TCON^2;$/;"	v
+Incdata	setpara.c	/^uchar Incdata;								\/\/参数大小标志??????$/;"	v
+Incdataright	setpara.c	/^uchar Incdataright;							\/\/右移按键按下次数标志$/;"	v
+Incinput	8253count.c	/^uchar  Incinput;                     \/\/探头个数标志，默认显示探头个数为8个$/;"	v
+Inctime	settime.c	/^uchar Inctime;						\/\/时间按键增加标志$/;"	v
+Init_8253	8253count.c	/^ void Init_8253()$/;"	f
+Init_Buf	main.c	/^void Init_Buf()$/;"	f
+Init_IO	main.c	/^void Init_IO()                       \/\/设置I\/O端口类型$/;"	f
+Init_MCU	main.c	/^void Init_MCU()$/;"	f
+Init_Para	main.c	/^void Init_Para()$/;"	f
+Init_RAM	main.c	/^void Init_RAM()$/;"	f
+Init_Time0	time0.c	/^void Init_Time0()$/;"	f
+Judge_Speak	config.h	/^sbit Judge_Speak=P1^7;      \/\/蜂鸣器标志信号，开关按键，高电平表示蜂鸣器不工作$/;"	v
+Keypress	config.h	/^#define Keypress /;"	d
+Keyvar	main.c	/^uchar data Keyvar=0xFF;                    \/\/按键变量$/;"	v
+Lcd_Clear	lcd.c	/^void Lcd_Clear()$/;"	f
+Lcd_Start	lcd.c	/^void Lcd_Start()$/;"	f
+Lcd_init	lcd.c	/^void Lcd_init()$/;"	f
+Led573	config.h	/^#define Led573 /;"	d
+Line_Change	setpara.c	/^void Line_Change()$/;"	f
+NUMSENDBYTES	config.h	/^#define NUMSENDBYTES /;"	d
+Note0	config.h	/^sbit Note0=P3^4;            \/\/并口从机发送数据标志$/;"	v
+Note1	config.h	/^sbit Note1=P4^4;            \/\/并口从机接收数据标志$/;"	v
+NumT0	time0.c	/^uint NumT0;                                \/\/8253定时中断次数,在按下测量按键后初始化为0;$/;"	v
+OV	STC12C5A60S2.h	/^sbit OV  = PSW^2;$/;"	v
+Open	lcd.c	/^void Open (uint idata x,uint idata y)$/;"	f
+P	STC12C5A60S2.h	/^sbit P   = PSW^0;$/;"	v
+P0	STC12C5A60S2.h	/^sfr P0   = 0x80; \/\/8 bitPort0          P0.7  P0.6  P0.5  P0.4  P0.3  P0.2  P0.1  P0.0       1111,1111$/;"	v
+P0M0	STC12C5A60S2.h	/^sfr P0M0 = 0x94; \/\/                                                                         0000,0000$/;"	v
+P0M1	STC12C5A60S2.h	/^sfr P0M1 = 0x93; \/\/                                                                         0000,0000$/;"	v
+P1	STC12C5A60S2.h	/^sfr P1   = 0x90; \/\/8 bitPort1          P1.7  P1.6  P1.5  P1.4  P1.3  P1.2  P1.1  P1.0       1111,1111$/;"	v
+P1ASF	STC12C5A60S2.h	/^sfr P1ASF = 0x9D; \/\/P1 analog special function$/;"	v
+P1M0	STC12C5A60S2.h	/^sfr P1M0 = 0x92; \/\/                                                                         0000,0000$/;"	v
+P1M1	STC12C5A60S2.h	/^sfr P1M1 = 0x91; \/\/                                                                         0000,0000$/;"	v
+P2	STC12C5A60S2.h	/^sfr P2   = 0xA0; \/\/8 bitPort2          P2.7  P2.6  P2.5  P2.4  P2.3  P2.2  P2.1  P2.0       1111,1111$/;"	v
+P2M0	STC12C5A60S2.h	/^sfr P2M0 = 0x96; \/\/                                                                         0000,0000$/;"	v
+P2M1	STC12C5A60S2.h	/^sfr P2M1 = 0x95; \/\/                                                                         0000,0000$/;"	v
+P3	STC12C5A60S2.h	/^sfr P3   = 0xB0; \/\/8 bitPort3          P3.7  P3.6  P3.5  P3.4  P3.3  P3.2  P3.1  P3.0       1111,1111$/;"	v
+P3M0	STC12C5A60S2.h	/^sfr P3M0 = 0xB2; \/\/                                                                         0000,0000$/;"	v
+P3M1	STC12C5A60S2.h	/^sfr P3M1 = 0xB1; \/\/                                                                         0000,0000$/;"	v
+P4	STC12C5A60S2.h	/^sfr P4   = 0xC0; \/\/8 bitPort4          P4.7  P4.6  P4.5  P4.4  P4.3  P4.2  P4.1  P4.0       1111,1111$/;"	v
+P4M0	STC12C5A60S2.h	/^sfr P4M0 = 0xB4; \/\/                                                                         0000,0000$/;"	v
+P4M1	STC12C5A60S2.h	/^sfr P4M1 = 0xB3; \/\/                                                                         0000,0000$/;"	v
+P4SW	STC12C5A60S2.h	/^sfr P4SW = 0xBB; \/\/Port-4 switch	    -   LVD_P4.6  ALE_P4.5  NA_P4.4   -     -     -     -	    x000,xxxx$/;"	v
+P5	STC12C5A60S2.h	/^sfr P5   = 0xC8; \/\/8 bitPort5           -     -       -      -    P5.3  P5.2  P5.1  P5.0    xxxx,1111$/;"	v
+P5M0	STC12C5A60S2.h	/^sfr P5M0 = 0xCA; \/\/                                                                         0000,0000$/;"	v
+P5M1	STC12C5A60S2.h	/^sfr P5M1 = 0xC9; \/\/                                                                         0000,0000$/;"	v
+PADC	STC12C5A60S2.h	/^sbit PADC     = IP^5;  \/\/ADC 中断优先级$/;"	v
+PALE	config.h	/^sbit PALE=P4^5;             \/\/备用显示屏按键，高电平表示不显示备用机$/;"	v
+PCA_PWM0	STC12C5A60S2.h	/^sfr PCA_PWM0 = 0xF2; \/\/PCA 模块0 PWM 寄存器。            -   -   -   -   -   -  EPC0H EPC0L   xxxx,xx00$/;"	v
+PCA_PWM1	STC12C5A60S2.h	/^sfr PCA_PWM1 = 0xF3; \/\/PCA 模块1 PWM 寄存器。            -   -   -   -   -   -  EPC1H EPC1L   xxxx,xx00$/;"	v
+PCOLSIG	config.h	/^sbit PCOLSIG=P3^3;          \/\/显示从机数据，应该没有实体按键，当虚拟按键使用，高电平表示不采集数据$/;"	v
+PCON	STC12C5A60S2.h	/^sfr PCON   = 0x87; \/\/Power Control        SMOD  SMOD0  LVDF  POF   GF1    GF0   PD   IDL    0001,0000$/;"	v
+PLVD	STC12C5A60S2.h	/^sbit PLVD     = IP^6;  \/\/低压监测中断优先级$/;"	v
+PPCA	STC12C5A60S2.h	/^sbit PPCA     = IP^7;  \/\/PCA 模块中断优先级$/;"	v
+PS	STC12C5A60S2.h	/^sbit PS       = IP^4;$/;"	v
+PSW	STC12C5A60S2.h	/^sfr PSW  = 0xD0; \/\/Program Status Word      CY    AC    F0    RS1   RS0    OV    F1    P    0000,0000$/;"	v
+PT0	STC12C5A60S2.h	/^sbit PT0      = IP^1;$/;"	v
+PT1	STC12C5A60S2.h	/^sbit PT1      = IP^3;$/;"	v
+PX0	STC12C5A60S2.h	/^sbit PX0      = IP^0;$/;"	v
+PX1	STC12C5A60S2.h	/^sbit PX1      = IP^2;$/;"	v
+Para	8253count.c	/^float  idata Para[10];               \/\/设定好的参数数组$/;"	v
+RB8	STC12C5A60S2.h	/^sbit RB8 = SCON^2;$/;"	v
+RELOAD_COUNT	serial.c	/^#define RELOAD_COUNT /;"	d	file:
+REN	STC12C5A60S2.h	/^sbit REN = SCON^4;$/;"	v
+RI	STC12C5A60S2.h	/^sbit RI  = SCON^0;$/;"	v
+RS0	STC12C5A60S2.h	/^sbit RS0 = PSW^3;$/;"	v
+RS1	STC12C5A60S2.h	/^sbit RS1 = PSW^4;$/;"	v
+ReSet	reset.c	/^void ReSet()$/;"	f
+RedLed_Flash	Masterdisplay.c	/^void RedLed_Flash(void)$/;"	f
+Redrawtime	settime.c	/^uchar Redrawtime;					\/\/刷新时间标志，默认为60s，单位是多少秒，每定时器中断5ms，一秒中断200次$/;"	v
+S2BUF	STC12C5A60S2.h	/^sfr S2BUF = 0x9B; \/\/S2 Serial Buffer                                                      xxxx,xxxx$/;"	v
+S2CON	STC12C5A60S2.h	/^sfr S2CON = 0x9A; \/\/S2 Control  S2SM0  S2SM1  S2SM2  S2REN  S2TB8  S2RB8  S2TI  S2RI      00000000B$/;"	v
+SADDR	STC12C5A60S2.h	/^sfr SADDR = 0xA9; \/\/Slave Address                                                         0000,0000$/;"	v
+SADEN	STC12C5A60S2.h	/^sfr SADEN = 0xB9; \/\/Slave Address Mask                                                    0000,0000$/;"	v
+SBUF	STC12C5A60S2.h	/^sfr SBUF = 0x99; \/\/Serial Data Buffer                                                     xxxx,xxxx$/;"	v
+SCON	STC12C5A60S2.h	/^sfr SCON = 0x98; \/\/Serial Control         SM0\/FE SM1   SM2   REN   TB8   RB8    TI    RI    0000,0000$/;"	v
+SM0	STC12C5A60S2.h	/^sbit SM0 = SCON^7;  \/\/SM0\/FE$/;"	v
+SM1	STC12C5A60S2.h	/^sbit SM1 = SCON^6;$/;"	v
+SM2	STC12C5A60S2.h	/^sbit SM2 = SCON^5;$/;"	v
+SP	STC12C5A60S2.h	/^sfr SP   = 0x81; \/\/Stack Pointer                                                            0000,0111$/;"	v
+SPCTL	STC12C5A60S2.h	/^sfr SPCTL  = 0xCE; \/\/SPI Control Register  SSIG  SPEN  DORD  MSTR  CPOL  CPHA  SPR1  SPR0  0000,0100$/;"	v
+SPDAT	STC12C5A60S2.h	/^sfr SPDAT  = 0xCF; \/\/SPI Data Register                                                     0000,0000$/;"	v
+SPSTAT	STC12C5A60S2.h	/^sfr SPSTAT = 0xCD; \/\/SPI Status Register   SPIF  WCOL   -     -     -     -     -     -    00xx,xxxx$/;"	v
+Select_Mast	main.c	/^void Select_Mast()$/;"	f
+Send_Word	collateral.c	/^void Send_Word(uchar *pbuf,uint ibyte)        $/;"	f
+ShowData	8253count.c	/^void ShowData()$/;"	f
+ShowSetResult	measure.c	/^void ShowSetResult()$/;"	f
+Side_LChange	setpara.c	/^void Side_LChange()$/;"	f
+Side_RChange	setpara.c	/^void Side_RChange()$/;"	f
+Signal1	config.h	/^#define Signal1 /;"	d
+Signal2	config.h	/^#define Signal2 /;"	d
+Signal3	config.h	/^#define Signal3 /;"	d
+Speak	config.h	/^sbit Speak=P1^0;            \/\/蜂鸣器，高电平表示不响$/;"	v
+Speak_Alarm	main.c	/^bit Speak_Alarm()$/;"	f
+State_Flash	8253count.c	/^uchar State_Flash[8];$/;"	v
+State_On_Off	Masterdisplay.c	/^uchar State_On_Off[7];                     \/\/指示灯状态标志.初始0$/;"	v
+Svar0	8253count.c	/^uchar data Svar0[8]={0xFE,0xFD,0xFB,0xF7,0xEF,0xDF,0xBF,0x7F};$/;"	v
+Svar1	8253count.c	/^uchar data Svar1[8]={0x01,0x02,0x04,0x08,0x10,0x20,0x40,0x80};     \/\/信号数组$/;"	v
+TB8	STC12C5A60S2.h	/^sbit TB8 = SCON^3;$/;"	v
+TCON	STC12C5A60S2.h	/^sfr TCON = 0x88; \/\/T0\/T1 Control           TF1   TR1   TF0   TR0   IE1   IT1   IE0   IT0    0000,0000$/;"	v
+TF0	STC12C5A60S2.h	/^sbit TF0 = TCON^5;$/;"	v
+TF1	STC12C5A60S2.h	/^sbit TF1 = TCON^7;$/;"	v
+TH0	STC12C5A60S2.h	/^sfr TH0  = 0x8C; \/\/T0 High Byte                                                             0000,0000$/;"	v
+TH1	STC12C5A60S2.h	/^sfr TH1  = 0x8D; \/\/T1 High Byte                                                             0000,0000$/;"	v
+TI	STC12C5A60S2.h	/^sbit TI  = SCON^1;$/;"	v
+TL0	STC12C5A60S2.h	/^sfr TL0  = 0x8A; \/\/T0 Low Byte                                                              0000,0000$/;"	v
+TL1	STC12C5A60S2.h	/^sfr TL1  = 0x8B; \/\/T1 Low Byte                                                              0000,0000$/;"	v
+TMOD	STC12C5A60S2.h	/^sfr TMOD = 0x89; \/\/T0\/T1 Modes             GATE1 C\/T1  M1_1  M1_0  GATE0 C\/T0  M0_1  M0_0   0000,0000$/;"	v
+TR0	STC12C5A60S2.h	/^sbit TR0 = TCON^4;$/;"	v
+TR1	STC12C5A60S2.h	/^sbit TR1 = TCON^6;$/;"	v
+TURE	collateral.c	/^#define TURE /;"	d	file:
+Tdata	8253count.c	/^uint  idata Tdata[8];                   \/\/探头计数率(2015年10月20日让Tdata为计数管的计数值)$/;"	v
+TimeFiveHundred	config.h	/^#define TimeFiveHundred /;"	d
+TimeOneHundred	config.h	/^#define TimeOneHundred /;"	d
+TimeThreeThousand	config.h	/^#define TimeThreeThousand /;"	d
+Tnumber	lcd.c	/^void Tnumber(int idata x,int idata y,uint idata n)$/;"	f
+Transfer	main.c	/^void Transfer()$/;"	f
+TrueRate	8253count.c	/^float  TrueRate[8];						\/\/当前探头准确剂量值所在的探头,为一表示GM计数管$/;"	v
+Tword	lcd.c	/^void Tword(uint idata i)$/;"	f
+TxEOF	lcd.c	/^void TxEOF()       \/\/发送帧结束符CC 33 C3 3C$/;"	f
+Txbyte	lcd.c	/^void Txbyte(uchar idata i)$/;"	f
+Txtext	lcd.c	/^void Txtext(uint idata x,uint idata y,uchar *s)$/;"	f
+Updata_Led	Masterdisplay.c	/^void Updata_Led(uchar j)$/;"	f
+Var_Led	8253count.c	/^uchar idata Var_Led;                 \/\/LED报警指示灯,为1时灭,初值0xff,$/;"	v
+Var_Signal1	8253count.c	/^uchar idata Var_Signal1;             \/\/探头控制信号1，接计数管，默认ff均接计数管$/;"	v
+Var_Signal2	8253count.c	/^uchar idata Var_Signal2;             \/\/探头控制信号2，接电离室，默认00；$/;"	v
+Var_Signal3	8253count.c	/^uchar idata Var_Signal3;             \/\/探头控制信号3，接电离室，默认00；$/;"	v
+WAKE_CLKO	STC12C5A60S2.h	/^sfr WAKE_CLKO = 0x8F; \/\/附加的 SFR WAK1_CLKO$/;"	v
+WDT_CONTR	STC12C5A60S2.h	/^sfr WDT_CONTR = 0xC1; \/\/Watch-Dog-Timer Control register$/;"	v
+WarnLed_Off	lcd.c	/^void WarnLed_Off(uint idata x,uint idata y)$/;"	f
+WarnLed_On	lcd.c	/^void WarnLed_On(uint idata x,uint idata y)$/;"	f
+Warning_Disp	Masterdisplay.c	/^void Warning_Disp(uchar Num,uchar Flag,uchar State)$/;"	f
+YuCent	setpara.c	/^uchar YuCent[8];								\/\/阈值百分位$/;"	v
+YuGe	setpara.c	/^uchar YuGe[8];									\/\/阈值个位$/;"	v
+YuTenth	setpara.c	/^uchar YuTenth[8];								\/\/阈值十分位$/;"	v
+YuThouth	setpara.c	/^uchar YuThouth[8];								\/\/阈值千分位$/;"	v
+Zhu_Cong	config.h	/^sbit Zhu_Cong=P1^6;         \/\/主从机标志信号，开关按键，高电平为主机$/;"	v
+_CONFIG_H	config.h	/^#define _CONFIG_H$/;"	d
+bSbNew	main.c	/^bdata bit bSbNew;                                \/\/备用机显示按键新的状态$/;"	v
+bSbOld	main.c	/^bdata bit bSbOld;                                \/\/备用机显示按键旧的状态$/;"	v
+bSsNew	main.c	/^bdata bit bSsNew;                                \/\/蜂鸣器按键新的状态$/;"	v
+bSsOld	main.c	/^bdata bit bSsOld;                                \/\/蜂鸣器按键旧的状态$/;"	v
+bSwNew	main.c	/^bdata bit bSwNew;                                \/\/实体采集按键新的状态$/;"	v
+bSwOld	main.c	/^bdata bit bSwOld;                                \/\/实体采集按键旧的状态$/;"	v
+biaoding_input	8253count.c	/^uchar biaoding_input;$/;"	v
+buf	8253count.c	/^uchar  buf[33];                      \/\/从8253中读到的计数器数据，15个计数器，低八位高八位，从3-32，1为探头个数，2为测量时间$/;"	v
+bz	setpara.c	/^uchar idata bz;                               \/\/显示设置参数个数标志$/;"	v
+count	main.c	/^uint count;$/;"	v
+count_change_flag	8253count.c	/^uchar count_change_flag[8];			\/\/计数改变标志？$/;"	v
+delay_n5ms_24	at24c16.c	/^void delay_n5ms_24(uchar idata n)$/;"	f
+dianlishi_DoseRata	8253count.c	/^float dianlishi_DoseRata;$/;"	v
+dianlishi_data	8253count.c	/^uint idata dianlishi_data;				\/\/标定时的电离室计数值相当于Tdata$/;"	v
+dispaly_para	setpara.c	/^void dispaly_para()$/;"	f
+dispaly_paramove	setpara.c	/^void dispaly_paramove()$/;"	f
+display_b	Masterdisplay.c	/^void display_b()$/;"	f
+dt_in	main.c	/^uchar dt_in[331];                       	 \/\/IIC存储数组，四位一组，共83组,芯片内部默认0为255$/;"	v
+jishu	main.c	/^uint  jishu;								\/\/计数？$/;"	v
+jishucount	main.c	/^uchar jishucount;							\/\/第几次计数，用来求平均值时知道这是第几次计数$/;"	v
+jishuguan_DoseRata	8253count.c	/^float jishuguan_DoseRata;$/;"	v
+jishuguan_data	8253count.c	/^uint idata jishuguan_data;				\/\/标定时的计数管计数值相当于Tdata$/;"	v
+key_function	main.c	/^void key_function()$/;"	f
+main	main.c	/^void main()$/;"	f
+measure	measure.c	/^void measure()$/;"	f
+measure_flag	main.c	/^bdata bit measure_flag;							\/\/默认0$/;"	v
+parameterleft	setpara.c	/^void parameterleft()                           $/;"	f
+parameterright	setpara.c	/^void parameterright()$/;"	f
+read_1_byte_24	at24c16.c	/^uchar read_1_byte_24(uint idata r_add)$/;"	f
+read_8_bit_24	at24c16.c	/^uchar read_8_bit_24(void)$/;"	f
+receive_buf	Masterdisplay.c	/^uchar receive_buf[57];                      \/\/接收从机数据$/;"	v
+receiveradd	config.h	/^#define receiveradd /;"	d
+scl	config.h	/^sbit scl = P1^4 ;			\/\/时钟线接p14$/;"	v
+sda	config.h	/^sbit sda = P1^5 ;			\/\/数据线接p15$/;"	v
+send_buf	8253count.c	/^uchar  send_buf[65];                 \/\/NIM_A向NIM_B发送数据的数组$/;"	v
+sendadd	config.h	/^#define sendadd /;"	d
+serial_port_two_initial	serial.c	/^void serial_port_two_initial()$/;"	f
+setinput	setinput.c	/^void setinput()$/;"	f
+setparameter	setpara.c	/^void setparameter()$/;"	f
+settime	settime.c	/^void settime()$/;"	f
+start_24	at24c16.c	/^void start_24(void)     \/\/时钟线保持高电平期间，数据线电平从高到低的跳变作为总线的起始信号$/;"	f
+stop_24	at24c16.c	/^void stop_24(void)     \/\/时钟线保持高电平期间，数据线电平从低到高的跳变作为总线的停止信号$/;"	f
+uchar	config.h	/^typedef unsigned char uchar;$/;"	t
+uint	config.h	/^typedef unsigned int uint;$/;"	t
+ulong	config.h	/^typedef unsigned long ulong;$/;"	t
+wb	setpara.c	/^uchar idata wb;                               \/\/设置参数行数标志$/;"	v
+write_1_byte_24	at24c16.c	/^void write_1_byte_24(uint idata w_add , uchar idata w_1_byte)$/;"	f
+write_8_bit_24	at24c16.c	/^void write_8_bit_24(uchar idata x)$/;"	f
+xh	setpara.c	/^uchar idata xh;                               \/\/设置探头个数标志$/;"	v

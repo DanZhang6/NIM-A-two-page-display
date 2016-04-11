@@ -1,0 +1,89 @@
+C51 COMPILER V7.08   SERIAL                                                                04/11/2016 13:25:20 PAGE 1   
+
+
+C51 COMPILER V7.08, COMPILATION OF MODULE SERIAL
+OBJECT MODULE PLACED IN serial.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE serial.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*************************************************
+   2          *描述：
+   3          *     单片机串口2设置
+   4          *功能：
+   5          *     通过串口2发送指令，在液晶屏上显示
+   6          
+   7          ************************************************/
+   8          #include "STC12C5A60S2.h"
+   9          #include "intrins.h"
+  10          #include "config.h" 
+  11          #include "absacc.h"
+  12          
+  13          #define RELOAD_COUNT  0xB8        //22.1184MHz,12T,SMOD=0,9600bps//70(4800),B8(9600),DC(19200),EE(38400),F
+             -4(57600),FA(115200)
+  14          
+  15          /*************************
+  16          *   串口1初始化
+  17          **************************/
+  18          /*void serial_port_one_initial()
+  19          {
+  20              SCON = 0x50;              //0101,0000 8位可变波特率，无奇偶校验位
+  21              BRT = RELOAD_COUNT;       //BRTR = 1, S1BRS = 1, EXTRAM = 1 ENABLE EXTRAM
+  22              AUXR = 0x15;              // T0x12,T1x12,UART_M0x6,BRTR,S2SMOD,BRTx12,EXTRAM,S1BRS
+  23              ES = 1;                   //允许串口中断
+  24              EA = 1;                   //开总中断
+  25          }*/
+  26          
+  27          /*************************
+  28          *   串口2初始化
+  29          **************************/
+  30          void serial_port_two_initial()
+  31          {
+  32   1          S2CON = 0x50;             //0101,0000 8位可变波特率，无奇偶校验位,允许接收
+  33   1          BRT = RELOAD_COUNT;       // BRTR = 1, S1BRS = 1, EXTRAM = 0 ENABLE EXTRAM
+  34   1          AUXR = 0x15;              // T0x12,T1x12,UART_M0x6,BRTR,S2SMOD,BRTx12,EXTRAM,S1BRS
+  35   1          IE2 = 0x01;               //允许串口2中断,ES2=1
+  36   1          EA = 1;                   //开总中断
+  37   1      }
+  38          
+  39          /**************************
+  40          *   串口1中断
+  41          ***************************/
+  42          /*void UART_one_Interrupt_Receive(void) interrupt 4
+  43          {
+  44              if(TI)
+  45              {
+  46                return;
+  47                  }  
+  48          }*/
+  49          
+  50          /**************************
+  51          *   串口2中断
+  52          ***************************/
+  53          void UART_two_Interrupt_Receive(void) interrupt 8
+  54          {
+C51 COMPILER V7.08   SERIAL                                                                04/11/2016 13:25:20 PAGE 2   
+
+  55   1          uchar data k = 0;
+  56   1          k = S2CON ;
+  57   1          k = k&0x10;              //S2TI
+  58   1          if(k == 1)       
+  59   1          {
+  60   2           return;    
+  61   2          }
+  62   1      }
+  63          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     25    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

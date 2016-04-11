@@ -1,0 +1,138 @@
+C51 COMPILER V7.08   SETTIME                                                               04/11/2016 13:25:28 PAGE 1   
+
+
+C51 COMPILER V7.08, COMPILATION OF MODULE SETTIME
+OBJECT MODULE PLACED IN settime.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE settime.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*************************************************
+   2          *描述：
+   3          *      时间设置
+   4          *功能：
+   5          *      设定计数器测量时间；
+   6          
+   7          **************************************************/
+   8          #include "STC12C5A60S2.h"
+   9          #include "intrins.h"
+  10          #include "config.h" 
+  11          #include "absacc.h"
+  12          
+  13          uchar Inctime;                                          //时间按键增加标志
+  14          uchar Redrawtime;                                       //刷新时间标志，默认为60s，单位是多少秒，每定时器中断5ms，一秒中断200次
+  15          
+  16          void settime()
+  17           {           
+  18   1            Flag_RefrInput=0;                         //探头个数按键再次按下标志
+  19   1            Flag_RefrPara=0;                          //输入参数按键再次按下标志
+  20   1            Flag_RefrRight=0;                         //右移按键再次按下标志
+  21   1                Inctime++;                    //按时间输入键，则测量时间改变5s或者60s
+  22   1                /*显示设置时间  秒*/  
+  23   1                if(Flag_RefrTime==0)
+  24   1           {
+  25   2                Flag_RefrTime=1;
+  26   2                    Clear();
+  27   2                    Lcd_Clear();      
+  28   2                        Txtext(128,216,"时间设置：");
+  29   2                    Tnumber(368,216,0);               //时间修改到5秒，修改时间2012.6.15
+  30   2                    Tnumber(416,216,0);
+  31   2                        Tnumber(464,216,5);
+  32   2                    Txtext(512,216,"秒");
+  33   2                        Redrawtime=5;
+  34   2                }
+  35   1           else
+  36   1               { 
+  37   2                       if((Inctime == 1)||(Inctime >= 11))       //修改时间2012.6.15
+  38   2                              {   
+  39   3                                Inctime = 1;
+  40   3                                Redrawtime = 5;
+  41   3                        Tnumber(368,216,0);
+  42   3                        Tnumber(416,216,0);
+  43   3                            Tnumber(464,216,5);          //刷新时间为5秒  
+  44   3                                }
+  45   2                   else if(Inctime == 2)
+  46   2                               {  
+  47   3                                Redrawtime = 10;
+  48   3                                Tnumber(368,216,0);
+  49   3                        Tnumber(416,216,1);
+  50   3                            Tnumber(464,216,0);
+  51   3                               }
+  52   2                   else if(Inctime == 3)
+  53   2                               {  
+  54   3                                Redrawtime = 20;
+  55   3                                Tnumber(368,216,0);
+C51 COMPILER V7.08   SETTIME                                                               04/11/2016 13:25:28 PAGE 2   
+
+  56   3                        Tnumber(416,216,2);
+  57   3                            Tnumber(464,216,0);
+  58   3                               }
+  59   2                   else if(Inctime == 4)
+  60   2                               {  
+  61   3                                Redrawtime = 30;
+  62   3                                Tnumber(368,216,0);
+  63   3                        Tnumber(416,216,3);
+  64   3                            Tnumber(464,216,0);
+  65   3                               }
+  66   2                      else if(Inctime == 5)
+  67   2                               {  
+  68   3                                Redrawtime = 40;
+  69   3                                Tnumber(368,216,0);
+  70   3                        Tnumber(416,216,4);
+  71   3                            Tnumber(464,216,0);
+  72   3                               }
+  73   2                      else if(Inctime == 6)
+  74   2                               {  
+  75   3                                Redrawtime = 50;
+  76   3                                Tnumber(368,216,0);
+  77   3                        Tnumber(416,216,5);
+  78   3                            Tnumber(464,216,0);
+  79   3                               }
+  80   2                      else if(Inctime == 7)
+  81   2                               {  
+  82   3                                Redrawtime = 60;
+  83   3                                Tnumber(368,216,0);
+  84   3                        Tnumber(416,216,6);
+  85   3                            Tnumber(464,216,0);
+  86   3                               }
+  87   2                      else if(Inctime == 8)
+  88   2                               {  
+  89   3                                Redrawtime = 120;
+  90   3                                Tnumber(368,216,1);
+  91   3                        Tnumber(416,216,2);
+  92   3                            Tnumber(464,216,0);
+  93   3                               }
+  94   2                      else if(Inctime == 9)
+  95   2                               {  
+  96   3                                Redrawtime = 240;
+  97   3                                Tnumber(368,216,2);
+  98   3                        Tnumber(416,216,4);
+  99   3                            Tnumber(464,216,0);
+ 100   3                               }
+ 101   2              else if(Inctime == 10)
+ 102   2                               {  
+ 103   3                                Redrawtime = 480;
+ 104   3                                Tnumber(368,216,4);
+ 105   3                        Tnumber(416,216,8);
+ 106   3                            Tnumber(464,216,0);
+ 107   3                               }
+ 108   2                 
+ 109   2      
+ 110   2            } 
+ 111   1      }         
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    636    ----
+   CONSTANT SIZE    =     14    ----
+   XDATA SIZE       =      2    ----
+C51 COMPILER V7.08   SETTIME                                                               04/11/2016 13:25:28 PAGE 3   
+
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

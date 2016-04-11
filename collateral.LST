@@ -1,0 +1,199 @@
+C51 COMPILER V7.08   COLLATERAL                                                            04/11/2016 13:25:09 PAGE 1   
+
+
+C51 COMPILER V7.08, COMPILATION OF MODULE COLLATERAL
+OBJECT MODULE PLACED IN collateral.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE collateral.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /************************************************************
+   2          *描述：
+   3          *     并行传输设置
+   4          *功能：
+   5          *     NIM-A和NIM-B之间数据传输，通过主机显示从机的计数结果
+   6          
+   7          ***********************************************************/
+   8          #include "STC12C5A60S2.h"
+   9          #include "intrins.h"
+  10          #include "config.h" 
+  11          #include "absacc.h"
+  12          
+  13          bit     FlagCollErr;                                                            //默认0
+  14          bit FlagColling ;                                                               //默认0
+  15          uint  CntColTimer;                                                              //默认0
+  16          
+  17          //#define receiveradd XBYTE[0xd000]               //并行传输接收地址
+  18          //#define sendadd     XBYTE[0xd800]               //并行传输发送地址
+  19          #define TURE 1
+  20          #define FALSE 0
+  21          
+  22          extern void display_b();
+  23          uchar ChkData(uchar *pub) ;
+  24          /***********************************
+  25          *        检测主机命令
+  26          ***********************************/
+  27          uchar CKMasterCmd()
+  28          {
+  29   1          volatile uchar var;
+  30   1              do
+  31   1              {
+  32   2                  if(FlagCollFall)              //等待超过1S,主从机通信失败
+  33   2                      {
+  34   3                              FlagCollFall = 0;
+  35   3                              Flag_Collateral = 0;
+  36   3                              CmOverTime = 0;
+  37   3                              return FALSE;
+  38   3                      }
+  39   2                      var=receiveradd; 
+  40   2              }
+  41   1              while(var!=0x00);               //等待主机的开始命令0x55
+  42   1              if(var==0x00)
+  43   1              {
+  44   2                  FlagCollFall = 0;
+  45   2                      Flag_Collateral = 0;
+  46   2                      CmOverTime = 0;
+  47   2                      return TURE;
+  48   2              }
+  49   1              else
+  50   1              {
+  51   2                  FlagCollFall = 0;
+  52   2                      Flag_Collateral = 0;
+  53   2                      CmOverTime = 0; 
+  54   2                  return FALSE;
+  55   2              }
+C51 COMPILER V7.08   COLLATERAL                                                            04/11/2016 13:25:09 PAGE 2   
+
+  56   1      
+  57   1      }
+  58          /*************************************
+  59          *       从机发送数据
+  60          *************************************/
+  61          void Send_Word(uchar *pbuf,uint ibyte)        
+  62          {       
+  63   1         uint i;
+  64   1         bit  bAck0;
+  65   1              
+  66   1         if(CKMasterCmd())
+  67   1         {
+  68   2             //Lcd_Clear();
+  69   2             //Txtext(100,182,"从机进行发送中...");
+  70   2                 i=0;
+  71   2                 while(i<ibyte)
+  72   2                 {
+  73   3                              do
+  74   3                              {       
+  75   4                                      if(CKMasterCmd()==FALSE)            //判断主机命令是否是0x55
+  76   4                      {
+  77   5                                           //Lcd_Clear();
+  78   5                                           //Txtext(100,182,"主从机无法通信");
+  79   5                           return;                        //不是0x55，则跳出函数
+  80   5                                      }
+  81   4                                      bAck0=Ack0;     
+  82   4                              }
+  83   3                              while(bAck0==0);                        //等待主机接收数据状态刷新
+  84   3                  sendadd=pbuf[i];                        //主机接收状态刷新，从机往发送地址里送数
+  85   3                              Note1=0;                                //数据发送完毕
+  86   3                      do
+  87   3                              {       
+  88   4                                      if(CKMasterCmd()==FALSE)            //判断主机命令是否是0x55
+  89   4                      {
+  90   5                           return;                        //不是0x55，则跳出函数
+  91   5                                      }
+  92   4                                      bAck0=Ack0;     
+  93   4                              }
+  94   3                              while(bAck0==1);                        //等待主机接收完毕数据
+  95   3                  Note1=1; 
+  96   3                              i++;
+  97   3                 }
+  98   2         }
+  99   1         else
+ 100   1         {
+ 101   2            Lcd_Clear();
+ 102   2                Tnumber(100,82,receiveradd);
+ 103   2            Txtext(100,182,"从机接收握手命令失败");
+ 104   2              }
+ 105   1      }
+ 106          
+ 107          /*************************************
+ 108          *       主机采集数据
+ 109          *************************************/
+ 110          void Collect_Word(uchar *pub,uint nbyte)     //主机采集数据              
+ 111          {
+ 112   1                uint i;
+ 113   1            bit bNote0;        
+ 114   1                sendadd=0x00;                         //给从机发送开始指令
+ 115   1                //Lcd_Clear();
+ 116   1                //Txtext(100,182,"主机进行接收中...");
+ 117   1                Ack1=1;                               
+C51 COMPILER V7.08   COLLATERAL                                                            04/11/2016 13:25:09 PAGE 3   
+
+ 118   1            i=0;
+ 119   1                FlagColling = 0;           
+ 120   1                while(i<nbyte)
+ 121   1                {     
+ 122   2                  FlagColling = 1;                    //字节之间时间定时
+ 123   2                      CntColTimer = 0;                    //字节之间定时中断次数清零,重新计时
+ 124   2                      do                              
+ 125   2                      {  
+ 126   3                              if(FlagCollErr == 1)            //等待超过0.5S
+ 127   3                              {
+ 128   4                                 FlagCollErr = 0;             //超时标志清零
+ 129   4                                 FlagColling = 0;             //字节之间定时清零
+ 130   4                             CntColTimer = 0;             //字节之间定时中断次数清零
+ 131   4                                 //Lcd_Clear();
+ 132   4                                 //Txtext(100,182,"主机接收失败");
+ 133   4                     FlagMasColSlavOK = 0;        //灯闪烁定时标志清零，灯不需要闪烁
+ 134   4                                 Flag_Warn_Led = 0;            //add 5.24
+ 135   4                             return;
+ 136   4                              }
+ 137   3                              bNote0=Note0;
+ 138   3                      }
+ 139   2                      while(bNote0==1);                   //等待从机刷新数据
+ 140   2                      pub[i]=receiveradd;                 //从机刷新完数据，主机从接收地址里读入字节      
+ 141   2                      Ack1=0;                             //主机字节接收完毕
+ 142   2              i++; 
+ 143   2              do                              
+ 144   2                      {  
+ 145   3                              if(FlagCollErr == 1)            //等待超过0.5S
+ 146   3                              {
+ 147   4                                 FlagCollErr = 0;             //超时标志清零
+ 148   4                                 FlagColling = 0;             //字节之间定时清零
+ 149   4                             CntColTimer = 0;             //字节之间定时中断次数清零                
+ 150   4                     FlagMasColSlavOK = 0;        //灯闪烁定时标志清零，灯不需要闪烁
+ 151   4                                 Flag_Warn_Led = 0;            //add 5.24
+ 152   4                             return;
+ 153   4                              }
+ 154   3                              bNote0=Note0;
+ 155   3                      }
+ 156   2                      while(bNote0==0);                   //need define
+ 157   2              Ack1=1;
+ 158   2                }
+ 159   1                 FlagColling = 0;                     //超时标志清零
+ 160   1             CntColTimer = 0;                     //字节之间定时清零
+ 161   1                 FlagCollErr = 0;                     //字节之间定时中断次数清零 
+ 162   1                 if(PCOLSIG==0)                       //要求显示从的数据按键按下   add4.21
+ 163   1                 {
+ 164   2                     shortdelay(2000);
+ 165   2                     display_b();                      //显示从机数据
+ 166   2                         FlagMasColSlavOK = 1;             //指示灯闪烁定时开始标志
+ 167   2                      }
+ 168   1             
+ 169   1       }
+ 170          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    332    ----
+   CONSTANT SIZE    =     21    ----
+   XDATA SIZE       =      2      11
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+C51 COMPILER V7.08   COLLATERAL                                                            04/11/2016 13:25:09 PAGE 4   
+
+   BIT SIZE         =      2       2
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,140 @@
+C51 COMPILER V7.08   TIME0                                                                 04/11/2016 13:25:30 PAGE 1   
+
+
+C51 COMPILER V7.08, COMPILATION OF MODULE TIME0
+OBJECT MODULE PLACED IN time0.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE time0.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /************************************************************
+   2          *ÃèÊö£º
+   3          *     ¶¨Ê±Æ÷0ÉèÖÃ
+   4          *¹¦ÄÜ£º
+   5          *     ¶¨Ê±Æ÷0¹¤×÷ÔÚ·½Ê½1£¬Ã¿5msÖÐ¶ÏÒ»´Î£¬¶¨Ê±Æ÷Ò»Ö±¿ª×Å
+   6          
+   7          ***********************************************************/
+   8          #include "STC12C5A60S2.h"
+   9          #include "intrins.h"
+  10          #include "config.h" 
+  11          #include "absacc.h"
+  12          uint NumT0;                                //8253¶¨Ê±ÖÐ¶Ï´ÎÊý,ÔÚ°´ÏÂ²âÁ¿°´¼üºó³õÊ¼»¯Îª0;
+  13          uint CntFlhWarnT0;                         //Ö÷»ú²É¼¯Êý¾ÝÊ±µÆÉÁË¸¶¨Ê±ÖÐ¶Ï´ÎÊý
+  14          uint CntWarn;                              //LEDµÆÉÁË¸¶¨Ê±ÖÐ¶Ï´ÎÊý
+  15          uint CntS1Warn;                            //±¸ÓÃÏÔÊ¾ÆÁÉÏµÆÉÁË¸¶¨Ê±ÖÐ¶Ï´ÎÊý
+  16          uint CmOverTime;                           //Ö÷´Ó»úÍ¨ÐÅÎÕÊÖ¶¨Ê±ÖÐ¶Ï´ÎÊý
+  17          bit Flag_Warn_Serial1;                     //±¸ÓÃÏÔÊ¾µÆ¶¨Ê±½áÊø±êÊ¶
+  18          bit Flag_Tim0;                             //¶¨Ê±Æ÷0½áÊø±êÖ¾£¬Ä¬ÈÏ0£»
+  19          bit FlagCollFall;                          //Ö÷´ÓÍ¨ÐÅÊ§°Ü±êÖ¾£¬0
+  20          /*************************************
+  21          *         ¶¨Ê±Æ÷0ÖÐ¶Ï³ÌÐò
+  22          **************************************/
+  23          void Tim0(void) interrupt 1                             //tim0¶¨Ê±½áÊøºóÔËÐÐÖÕ¶Ë³ÌÐò(¶¨Ê±ÖÐ¶Ï)
+  24          {
+  25   1          TF0=0;                                                                      //ÉèÖÃ¶¨Ê±Æ÷¿ØÖÆ¶¨Ê±Æ÷,ÖØÖÃ¶¨Ê±Æ÷³õÖµ
+  26   1          TH0=0xDC;                              //¶¨Ê±Æ÷0Ã¿5msÖÐ¶ÏÒ»´Î
+  27   1          TL0=0x00;
+  28   1          if(Flag_Mast)                                                       //ÈôÖ÷´Ó»ú°´Å¥ÎªÖ÷»ú
+  29   1              {
+  30   2                      if(FlagMasColSlavOK)               //Ö÷»ú²É¼¯Êý¾ÝÊ±µÆÉÁË¸¶¨Ê±
+  31   2                      {
+  32   3                          if(++CntFlhWarnT0 >= TimeFiveHundred)   //TimeFiveHundred=100,¶¨Ê±Æ÷5msÖÐ¶ÏÒ»´Î,±¨¾¯µÆÔò500msË¢ÐÂÒ»´
+             -Î
+  33   3                              {
+  34   4                                      CntFlhWarnT0 = 0;
+  35   4                                      Flag_Warn_Led = 1;         //µÆ×´Ì¬¿ªÊ¼±ä»»±êÖ¾
+  36   4                              }
+  37   3                      }
+  38   2          }
+  39   1          if(Flag_Warn_Count)                    //°´¼ü²âÁ¿Ê±µÆÉÁË¸¶¨Ê±
+  40   1                      {
+  41   2                          if(++CntWarn >= TimeFiveHundred)      //500msË¢ÐÂÒ»´Î
+  42   2                              {
+  43   3                                      CntWarn = 0;
+  44   3                                      Flag_Warn_Flash = 1;        //µÆ×´Ì¬¿ªÊ¼±ä»»±êÖ¾
+  45   3                              }
+  46   2                      }
+  47   1      /*    if(Flag_serial1_led)                    //±¸ÓÃÏÔÊ¾ÆÁÉÏµÆÉÁË¸¶¨Ê±
+  48   1                      {
+  49   1                          if(++CntS1Warn >= TimeFiveHundred)    //500msË¢ÐÂÒ»´Î
+  50   1                              {
+  51   1                                      CntS1Warn = 0;
+  52   1                                      Flag_Warn_Serial1 = 1;      //µÆ×´Ì¬¿ªÊ¼±ä»»±êÖ¾
+  53   1                              }
+  54   1                      }*/
+C51 COMPILER V7.08   TIME0                                                                 04/11/2016 13:25:30 PAGE 2   
+
+  55   1              if(Flag8253Cnting)                       //8253¼ÆÊý¶¨Ê±¿ªÊ¼±êÖ¾ÖÐ¶Ï,°´ÏÂ²âÁ¿°´¼üºó=1 ¿ªÊ¼¶¨Ê±            
+             -    
+  56   1              {       
+  57   2                      NumT0 = ++NumT0;                                        //8253¶¨Ê±ÖÐ¶Ï´ÎÊý,
+  58   2                      if(NumT0 >=(200*Redrawtime))         //1SÖÓÖÐ¶Ï200´Î£¬RedrawtimeÊ±¼äÄÚÖÐ¶Ï200*Redrawtime´Î,¼´ÖÐ¶Ï1ÃëºóÖ´
+             -ÐÐ,¹Ø±Õ8253ÃÅ¿ØÐÅºÅ
+  59   2                  {              
+  60   3                           NumT0 = 0;
+  61   3                               GATE = 0;                       //¹Ø±Õ8253ÃÅ¿ØÐÅºÅ
+  62   3                               Flag_Tim0 = 1;                  //¼ÆÊ±Æ÷½áÊø±êÖ¾£¬ÔÚmainº¯ÊýÖÐ²»¶Ï¼ì²âÊÇ·ñÎª1£¬ÎªÒ»Ê±½øÈëÑ­»·
+  63   3                       Flag8253Cnting = 0;             //¶¨Ê±¼ÆÊý±êÖ¾ÇåÁã
+  64   3                              
+  65   3                  }
+  66   2      /*              else
+  67   2                      {
+  68   2                               Flag_Tim0=0;                   //¶¨Ê±Ê±¼äÃ»µ½£¬ÕýÔÚ¶¨Ê±ÖÐ
+  69   2                               if(NumT0 ==((200*Redrawtime)-100))      //Ë¢ÐÂÊ±¼ä
+  70   2                                  {     
+  71   2                                              Flag_data_change = 0;
+  72   2                                      } 
+  73   2                      }*/
+  74   2              }
+  75   1              if(FlagColling)                          //Êý¾Ý²É¼¯¼ä¸ôÊ±¼ä¶¨Ê±
+  76   1              {
+  77   2                      if(++CntColTimer >= TimeOneHundred)       //100msË¢ÐÂÒ»´Î
+  78   2                      {
+  79   3                              FlagCollErr = 1;
+  80   3                              CntColTimer = 0;
+  81   3                      }
+  82   2              }
+  83   1         if(Flag_Collateral)                          //Ö÷´Ó»úÍ¨ÐÅÎÕÊÖ¶¨Ê±
+  84   1         { 
+  85   2                 if(++CmOverTime >=TimeThreeThousand)
+  86   2             {
+  87   3                FlagCollFall = 1;
+  88   3                CmOverTime = 0;
+  89   3             }        
+  90   2         }
+  91   1      }
+  92          
+  93          /*************************************
+  94          *         ¶¨Ê±Æ÷0³õÊ¼»¯
+  95          **************************************/
+  96          void Init_Time0()
+  97          {
+  98   1              TMOD=0x01;                  //¶¨Ê±Æ÷0¹¤×÷ÔÚ·½Ê½1
+  99   1          TH0=0xDC;                   //Ô¤ÖÃ¶¨Ê±³õÖµDC00H,¾§ÕñÆµÂÊ22.1184MHz,¶¨Ê±Ê±³¤Ô¼5ms
+ 100   1          TL0=0x00;
+ 101   1          NumT0=0;                    //ÖÐ¶Ï¼ÆÊý³õÊ¼»¯
+ 102   1          CntFlhWarnT0 = 0;
+ 103   1              CntWarn = 0;
+ 104   1              CntS1Warn = 0;
+ 105   1          CmOverTime = 0;
+ 106   1              CntColTimer = 0;
+ 107   1          EA=1;                      //¿ªÆô×ÜÖÐ¶Ï
+ 108   1          ET0=1;                     //¿ªÆô¶¨Ê±Æ÷0Ê¹ÄÜ
+ 109   1          TR0=1;                         //¿ªÆô¶¨Ê±Æ÷0        
+ 110   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    282    ----
+C51 COMPILER V7.08   TIME0                                                                 04/11/2016 13:25:30 PAGE 3   
+
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =     10    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      3    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

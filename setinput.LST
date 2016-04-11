@@ -1,0 +1,99 @@
+C51 COMPILER V7.08   SETINPUT                                                              04/11/2016 13:25:24 PAGE 1   
+
+
+C51 COMPILER V7.08, COMPILATION OF MODULE SETINPUT
+OBJECT MODULE PLACED IN setinput.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE setinput.c LARGE BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*************************************************
+   2          *描述：
+   3          *      探头设置
+   4          *功能：
+   5          *      测量期间，按此键显示当前探头个数
+   6          *      测量结束，按此键设置探头个数
+   7          *      选择范围 1-8
+   8          
+   9          **************************************************/
+  10          #include "STC12C5A60S2.h"
+  11          #include "intrins.h"
+  12          #include "config.h" 
+  13          #include "absacc.h"
+  14          
+  15          /*探头按键按下*/
+  16          void setinput()
+  17          {   
+  18   1          Flag_RefrPara=0;                                    //输入参数按键再次按下标志
+  19   1          Flag_RefrRight=0;                                   //右移再次按下标志
+  20   1          Flag_RefrTime=0;                                    //测量时间再次按下标志
+  21   1              Incinput++;                                             //探头个数标志
+  22   1          if(Incinput>16)                                             //最多兼容15个探头
+  23   1              {
+  24   2                      Incinput=1;
+  25   2              }
+  26   1          /*显示设置的探头个数，最多个数为10个*/
+  27   1              if(Flag_RefrInput==0)
+  28   1          {
+  29   2                      Flag_RefrInput=1; 
+  30   2                      Clear();                                                        //清除光标
+  31   2                      Lcd_Clear();                                            //LCD清屏
+  32   2                      if(Incinput<9)
+  33   2                      {
+  34   3                      Txtext(104,216,"设置测量探头共计："); 
+  35   3                      Tnumber(522,216,Incinput);
+  36   3                      Txtext(542,216,"个");                //"个"
+  37   3                      }
+  38   2                      else
+  39   2                  {
+  40   3                          measure_flag=0;
+  41   3                              Clear();
+  42   3                              Lcd_Clear();
+  43   3                              biaoding_input=Incinput-8;
+  44   3                              Txtext(14,216,"对应要标定的探头：第"); 
+  45   3                      Tnumber(514,216,biaoding_input);
+  46   3                      Txtext(544,216,"个"); 
+  47   3                              Redrawtime=5;
+  48   3                      
+  49   3                      }
+  50   2              }
+  51   1                else
+  52   1                {
+  53   2                      if(Incinput<9)
+  54   2                      {
+  55   3                         measure_flag=1;
+C51 COMPILER V7.08   SETINPUT                                                              04/11/2016 13:25:24 PAGE 2   
+
+  56   3                         Clear();
+  57   3                         Lcd_Clear();
+  58   3                         Txtext(104,216,"设置测量探头共计："); 
+  59   3                 Tnumber(522,216,Incinput);
+  60   3                 Txtext(542,216,"个"); 
+  61   3                      } 
+  62   2                      else if(Incinput>8) 
+  63   2                       {
+  64   3                              measure_flag=0;
+  65   3                              Clear();
+  66   3                              Lcd_Clear();
+  67   3                              biaoding_input=Incinput-8;
+  68   3                              Txtext(14,216,"对应要标定的探头：第"); 
+  69   3                      Tnumber(514,216,biaoding_input);
+  70   3                      Txtext(544,216,"个");
+  71   3                              Redrawtime=5;
+  72   3                       }
+  73   2                      }
+  74   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    198    ----
+   CONSTANT SIZE    =     43    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
